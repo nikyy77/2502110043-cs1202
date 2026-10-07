@@ -1,0 +1,18 @@
+Data Types, Literals & Variables
+​The Materials Catalogue (Python Data Types)
+​INT · BAR STOCK  
+​Description: Whole numbers, exact and countable. Parts produced, stations on a line, teeth on a gear.  
+​Examples: 42, 0, -3 \rightarrow says <class 'int'>.  
+​FLOAT · GROUND FINISH  
+​Description: Measured quantities with a decimal point. Diameters, temperatures, cycle times. The point is the certificate — 25.0 is float even though it looks whole.  
+​Examples: 25.0, 0.05, 3.14 \rightarrow <class 'float'>.  
+​STR · NAMEPLATE  
+​Description: Text in quotes — engravings, labels, part numbers. Anything quoted is a nameplate, even if it looks like a number.  
+​Examples: "VSSUT", "25", 'GO' \rightarrow <class 'str'>.  
+​BOOL · LIMIT SWITCH  
+​Description: Exactly two states: True or False. Capital first letter, no quotes. Every if/else you'll ever write runs on these.  
+​Examples: True, False \rightarrow <class 'bool'>.  
+​The Spectrometer: When in doubt, don't argue — measure. print(type(x)) settles every certification dispute in one line. Engineers verify; they don't guess.
+  
+​Reserved Tool Names & Legal Labels
+​Some words are Python's own tools — keywords — and can never be variable names.
