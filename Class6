@@ -1,0 +1,30 @@
+set count to 0
+repeat 5 times
+    change count by 1
+say join "parts made: " count
+What Just Happened: The blocks were never the program; they were the scaffolding around it. The Python text was the building all along — and buildings stand without scaffolding.
+  
+​Specifications - What You Should Take Away
+​(End-of-module inspection)  
+​Dry Run Execution: Read a 4–6 line pure-Python snippet and state its output before running it — the dry run, the first article inspection.  
+​Two Classic Traps:
+​range(4) starts at 0 and produces 0, 1, 2, 3.  
+​"25" + "30" joins text (concatenation), it does not add.  
+​Indentation as Structure: The shifted lines are inside the loop or the if block — it is the text's way of drawing the block outline.  
+​Core Development Habit: Across Scratch \rightarrow EduBlocks \rightarrow text, the essential habit that carries through is: predict, then run.  
+​Try It - First Article Inspection
+​(Dry-run the program, predict the output)  
+​Before mass production, machine one first article and inspect it.  
+​Before running code, dry-run it mentally.  
+​Practice predicting exact outputs for six pure-Python snippets without block hints.  
+​Note: Articles 5 and 6 cause most errors for beginners.  
+​Quiz Alert: Today's quiz consists of these exact exercises on paper. Passing all six here twice makes OP 50 a formality.
+  
+​Dispatch List - Foundations Closed (Before Lab Tomorrow & Job 07)
+​Notebook Entry: Min. 1 sheet / 2 pages covering:
+​The scaffolding concept in your own words.  
+​Both classic traps.  
+​Teach-back peer's name + roll number.  
+​Work Order 02: (Fri 9–11 AM, A-11) — Ensure EduBlocks account works and GitHub username is remembered for running first real Python code.  
+​Gemini Notebook: Paste a short Python snippet into Gemini, ask it to predict the output and explain line-by-line. Verify against a live run in EduBlocks, record discrepancies, and link on Google Site.  
+​NPTEL: Complete Week-2 videos; Week 3 starts next week.  
