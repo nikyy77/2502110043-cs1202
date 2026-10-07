@@ -1,0 +1,19 @@
+try:
+    dia = float(input("Diameter: "))   # only the risky line goes here
+except ValueError:
+    print("Not a number - enter e.g. 25.02") # name the species you EXPECT
+    dia = None                         # and tell the operator what to do
+else:
+    print("Reading accepted")           # runs only if NOTHING went wrong
+finally:
+    print("Gauge released")             # runs either way - cleanup lives here
+def inspect_reading(text):
+    try:
+        dia = float(text)
+        if 24.95 <= dia <= 25.05:
+            return "ACCEPT"
+        return "REJECT: " + rseon   # <- typo! should be "reason"
+    
+    # [ choose an except clause ]
+    
+    return "REFUSED: bad reading"
