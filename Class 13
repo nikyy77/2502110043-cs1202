@@ -1,0 +1,13 @@
+MOVECODEWHAT IT DOES TO THE BIN
+Add at the endbin.append(25.10)New part dropped in at the back — the everyday move.
+Squeeze in at a positionbin.insert(1, 24.90)Everything from index 1 onward shifts right.
+Take the last onebin.pop()Removes and hands back the last part.
+Take a specific positionbin.pop(0)Removes by address — and every later index shifts down.
+Throw out by valuebin.remove(24.98)Removes by what it is, first match only.
+Re-order the binbin.sort() · bin.reverse()Key Concept: pop vs remove
+​The distinction worth memorising:
+​pop takes a part by its position ("give me bin slot 0").
+  
+​remove takes it by its identity ("get that 24.98 out of here").
+  
+​Storekeepers do both daily and never confuse them. And after any removal, the addresses change.
