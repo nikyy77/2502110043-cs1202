@@ -1,0 +1,9 @@
+SHIFT REPORT
+L-01          25.02     128
+L-02          24.98       7
+GRINDER-3     25.05    1248
+print(f"{tag:<10}{dia:>8.2f}{parts:>8}")
+fields = ["PE-0107", "25.02", "ACCEPT"]
+row = ",".join(fields)       # -> "PE-0107,25.02,ACCEPT"  <- a CSV row!
+back = row.split(",")        # -> ["PE-0107", "25.02", "ACCEPT"] <- and back again
+print(f"{tag:<10}{dia:>8.2f}{parts:>8}")
