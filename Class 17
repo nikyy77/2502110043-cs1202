@@ -1,0 +1,19 @@
+Anatomy of a Jig (Four Parts, One Tool)
+​DEF NAME  
+​Concept: The jig's part number, stamped on the side. Chosen so a stranger knows what it does.  
+​PARAMETERS  
+​Concept: The clamps. Whatever you fit in becomes the workpiece for this run — and only this run.  
+​BODY  
+​Concept: The operations, indented under the def line. Written once, however many times it runs.  
+​RETURN  
+​Concept: The finished part handed back to the bench. Without it, the jig keeps its work to itself.  
+​Code Implementation & Function Invocationdef inspect(dia, lower=24.95, upper=25.05):  # defaults = standard setting
+    if dia > upper:
+        return "REWORK"
+    elif dia < lower:
+        return "SCRAP"
+    return "ACCEPT"
+
+inspect(25.02)                   # "ACCEPT" - standard tolerance
+inspect(25.02, 25.00, 25.04)    # "REWORK" - tighter job, positional
+inspect(25.02, upper=25.01)     # "REWORK" - keyword: change ONE setting
