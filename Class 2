@@ -1,0 +1,16 @@
+Core Programming Concepts & Python Bridge
+​Concept Mapping
+​REPEAT  
+​Concept: Run the enclosed blocks N times — one press, many cycles.  
+​Job 09 onward: for i in range(10):  
+​IF .. ELSE  
+​Concept: Test a condition, take one of two paths. Accept or reject.  
+​Job 09 onward: if dia <= limit: ... else: ...  
+​SENSING  
+​Concept: Ask the world a question: touching? key pressed? value of...?  
+​Job 08 onward: input() and comparisons  
+​VARIABLE  
+​Concept: A labelled bin that holds one value — a counter, a score, a diameter.  
+​Job 07 onward: count = 0  
+​Note: Keep this page bookmarked: when Python syntax arrives in Module I, come back and see that you already knew all of it — you just wore blocks instead of text.
+  
