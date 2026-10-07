@@ -1,0 +1,23 @@
+# Creating a CSV row using join
+fields = ["PE-0137", "25.02", "ACCEPT"]
+row = ",".join(fields)  # Result: "PE-0137,25.02,ACCEPT"
+
+# Parsing a CSV row using split
+back = row.split(",")  # Result: ['PE-0137', '25.02', 'ACCEPT']
+# Creating a CSV row using join
+fields = ["PE-0137", "25.02", "ACCEPT"]
+row = ",".join(fields)  # Result: "PE-0137,25.02,ACCEPT"
+
+# Parsing a CSV row using split
+back = row.split(",")  # Result: ['PE-0137', '25.02', 'ACCEPT']
+Formatting Principles for Visual Alignment
+​Numbers (Right-Aligned): Right-aligning digits ensures decimal points align vertically, allowing quick visual comparison of magnitudes (as seen in standard financial ledgers).  
+​Labels (Left-Aligned): Left-aligning text aligns the starting letters, following natural scanning patterns for text.  
+​4. Key Takeaways & Standards
+​Core String Methods: Master strip, split, join, and replace.  
+​Format Spec Order: Always specify alignment, width, and decimals in that order.  
+​Report Layout Rule:
+​Align labels left.  
+​Align numbers right.  
+​Ensure decimal points line up vertically.  
+​Readability Test: A report is properly formatted if you can read the values cleanly without shif
