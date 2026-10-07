@@ -1,0 +1,15 @@
+Diagnosis: NameError means you reached for a tool that was never signed out.
+  
+​Your Collection of Errors So Far:
+​TypeError: Wrong materials welded.  
+​ValueError: Hopeless input.  
+​NameError: Tool not drawn.  
+​Learn to tell them apart by the first line; each points to a different kind of fix.  
+​Specifications - What You Should Take Away
+​Write both requisition styles from memory — and know which call form each one permits afterwards.  
+​Diagnose a NameError in one glance and name the missing import.  
+​Try It - The Requisition Desk
+​Six jobs arrive at the crib window. For each, three requisition slips have been filled out — only one actually gets the tool working on your bench. Tap the good slip. The wrong ones tell you exactly which traceback they'd earn.  
+​Job 4 is the one that separates those who understood from those who memorised.  
+​Then to Colab (OP 40): Requisition random, draw ten diameters with random.uniform(24.90, 25.10), and sort each by hand into ACCEPT / REWORK / SCRAP. Next week's lab automates what your eyes did today.
+  
