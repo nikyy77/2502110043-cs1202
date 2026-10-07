@@ -1,0 +1,45 @@
+class Machine:                          # The family drawing
+    def __init__(self, tag):
+        self.tag = tag
+        self.running = False
+        self.hours = 0
+
+    def start(self): 
+        self.running = True; return f"{self.tag} started"
+    
+    def stop(self):  
+        self.running = False; return f"{self.tag} stopped"
+    
+    def status(self): 
+        return f"{self.tag} running={self.running}"
+
+
+class Lathe(Machine):                   # A variant: IS-A Machine
+    def __init__(self, tag, max_rpm=2000):
+        super().__init__(tag)           # Build the shared parts FIRST!
+        self.max_rpm = max_rpm          # Then add what is ours alone
+        self.parts = 0
+
+    def make_part(self):                # Machining: Lathes do this
+        if not self.running: 
+            return "REFUSED: not running"
+        self.parts += 1
+        return f"{self.tag} made part #{self.parts}"
+
+    def status(self):                   # OVERRIDE: our own version
+        return super().status() + f" | {self.parts} parts"
+
+
+class Press(Machine):                   # Another variant
+    def stroke(self): ...               # Presses stroke; Lathes turn
+Core Inheritance Principles
+​The "IS-A" Test for Inheritance:
+  
+​The test for inheritance is the words "IS A". A lathe is a machine, so Lathe(Machine) is right.
+  
+​A lathe has a chuck — that is not inheritance, that's an attribute holding another object.
+  
+​Get this test wrong and you build family trees that make no sense: a Press is not a kind of Lathe, however similar their code looks.
+  
+​Why super().__init__(tag) Comes First:
+The shared parts of the machine must exist before you bolt anything on. Skip that line and your lathe has no tag, no running flag, and no hours — a variant built on a drawing that was never issued. Every child's __init__ starts by calling its parent's.
