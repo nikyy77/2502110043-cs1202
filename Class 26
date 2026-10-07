@@ -1,0 +1,20 @@
+import re
+
+# Returns a Match object if the entire string matches the gauge pattern
+re.fullmatch(r"PE-\d{4}", "PE-0137")
+
+# Returns a list of all decimal numbers in the line
+re.findall(r"\d+\.\d+", line)
+
+# Splits the line by commas and any surrounding whitespace
+re.split(r"\s*,\s*", line)
+
+# Squeezes multiple whitespace characters into a single space
+re.sub(r"\s+", " ", line)
+Escaping Dots (\. vs .)
+​Unescaped . matches any character except a newline.  
+​Escaped \. matches a literal dot. Forgetting to escape dots allows invalid inputs with arbitrary characters to pass through.  
+​4. Key Takeaways & Practical Application
+​Read Patterns Out Loud: Deconstruct and read short regex patterns token-by-token in plain English.  
+​Regex vs. Split: While split() is useful for standard structured data, re.findall() handles messy inputs with varying spacing, missing separators, or stray tabs much more robustly.  
+​Anchor Validation: Always apply anchors when validating fixed-format codes or full strings (e.g., product IDs or phone numbers).  
