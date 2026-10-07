@@ -1,0 +1,10 @@
+def inspect(dia, lower=24.95, upper=25.05):  # defaults = standard setting
+    if dia > upper:
+        return "REWORK"
+    elif dia < lower:
+        return "SCRAP"
+    return "ACCEPT"
+
+inspect(25.02)                   # "ACCEPT" - standard tolerance
+inspect(25.02, 25.00, 25.04)    # "REWORK" - tighter job, positional
+inspect(25.02, upper=25.01)     # "REWORK" - keyword: change ONE setting
