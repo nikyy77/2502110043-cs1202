@@ -1,0 +1,30 @@
+class Lathe:
+    def __init__(self, tag, max_rpm=2000):
+        self.tag = tag                  # public: safe to read and set
+        self._max_rpm = max_rpm         # _one underscore: "please don't touch"
+        self.__rpm = 0                  # __two: Python actively hides it
+        self.__parts = 0
+
+    def start(self, rpm):               # the control panel button
+        if not 0 < rpm <= self._max_rpm:
+            return "REFUSED: outside lathe range"
+        self.__rpm = rpm                # only the machine touches its own spindle
+        return "Running"
+
+    def status(self):                   # a getter: reports, never exposes
+        return f"tag:{self.tag}, rpm:{self.__rpm}, parts:{self.__parts}"
+
+
+L1 = Lathe("L-01")
+L1.__rpm = 99900                        # looks like a bypass...
+L1.status()                             # {'tag':'L-01', 'rpm':0, ...} - spindle untouched!
+                                        # it just made a NEW unrelated attribute
+L1._Lathe__rpm                          # the real one, if you truly insist
+Comparing Implementations: L_open vs L_safe
+​L_open (Unguarded): No guards — self.rpm, self.parts_made public. Can be wrecked in a single line.  
+​L_safe (Guarded): Guarded — __rpm, __parts private + validation.  
+​Error Handling Rule: Note what the guarded machine does with a bad command: it refuses AND explains. Silence would be worse than a crash.
+  
+​Lab & Hands-On Activities (OP 40 / OP 50)
+​OP 40 in Colab: Fit the same three guards to your own Lathe — private state, a validating start(), and a status() getter.  
+​OP 50 Challenge: Hand your code to y
