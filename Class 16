@@ -1,0 +1,35 @@
+stock = {
+    "PE-26-0107": 42,   # part number -> quantity in box
+    "PE-26-0201": 9,
+    "PE-26-0345": 130
+}
+
+stock["PE-26-0201"]           # -> 9 - straight to it, no scanning
+stock["PE-26-0201"] -= 6       # loose one: update in place
+stock["PE-26-0009"] = 15      # brand-new part: just assign it
+del stock["PE-26-0107"]       # obsolete: strike it off
+
+>>> stock["PE-26-XXXX"]
+KeyError: 'PE-26-XXXX'        # species #5: no such card in the catalogue
+
+stock.get("PE-26-XXXX", 0)    # -> 0 - the safe ask: "and if not, assume zero"
+"PE-26-0345" in stock         # -> True - the polite ask before looking
+codes = ["D01", "D07", "D01", "D03", "D01"]
+
+count = {}
+for c in codes:
+    if c in count:
+        count[c] = count[c] + 1
+    else:
+        count[c] = 1
+
+# {"D01": 3, "D07": 1, "D03": 1}
+count = {}
+for c in codes:
+    count[c] = count.get(c, 0) + 1
+
+# same result, three lines shorter
+
+# worst offender:
+worst = max(count, key=count.get)
+# 'D01'
