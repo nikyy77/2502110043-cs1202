@@ -1,0 +1,9 @@
+# Example Extraction:
+code[0:5] -> "VSSUT"  # length 5
+​Separator Rules: Field 5 crosses a dash on purpose — slices don't respect your feelings about separators, only addresses.  
+​OP 30 Continues in Colab: Write your roll number as one string, then slice and print each field with a label. Your neighbour's slices should work on your number if the format matches — that's what a format IS.
+  
+​Dispatch List - Week 4 Closed (Before Lab Tomorrow & Job 13)
+​Notebook entry: min. 1 sheet / 2 pages: the ruler drawn by hand for your own roll number, three slices with results, the engraving demo, and your teach-back peer's name + roll no.  
+​Tomorrow - Work Order 04: (Fri 9–11 AM, A-11) — the loops & conditionals workout; your simulated inspection bench from Job 10 gets automated end-to-end.  
+​Gemini notebook: ask Gemini to design a 12-character serial-number format for a gear factory, then write the Python 
