@@ -1,0 +1,32 @@
+Object Lifecycle & Dunder Methods
+​The Life of a Machine (Four Events, Three Dunders)
+​COMMISSIONING  
+​Concept: Nameplate fitted, counters zeroed, ready for work. Runs once, automatically, the moment the object is made.  
+​Method: __init__(self, ...)  
+​IDENTIFICATION  
+​Concept: Someone asks "which machine is this?" Without a nameplate you get a memory address — useless on a shop floor.  
+​Method: __str__(self)  
+​SERVICE  
+​Concept: The ordinary working life: your own methods doing the job.  
+​Examples: start(), make_part(), status()  
+​DECOMMISSIONING  
+​Concept: Struck off the register: coolant drained, power isolated, tools returned. Runs when the object is destroyed.  
+​Method: __del__(self)  
+​Code Implementationclass Lathe:
+    def __init__(self, tag, max_rpm=2000):
+        self.tag = tag
+        self._max_rpm = max_rpm
+        self.__rpm = 0
+        self.__parts = 0
+        print(f"{self.tag} commissioned, {max_rpm} rpm rated")
+
+    def __str__(self):                   # The nameplate
+        return f"Lathe {self.tag} | {self.__rpm} rpm | {self.__parts} parts"
+
+    def __del__(self):                   # The disposal procedure
+        print(f"{self.tag} decommissioned after {self.__parts} parts")
+
+
+L1 = Lathe("L-01")       # L-01 commissioned, 2000 rpm rated
+print(L1)               # Lathe L-01 | 0 rpm | 0 parts <- your nameplate
+del L1                  # L-01 decommissioned after 0 parts
