@@ -1,0 +1,33 @@
+Route Sheet Activity — Making One Cup of Chai
+Available Operations:
+Light the stove
+Boil water in the pan
+Add tea leaves & spices
+Simmer till it rises
+Strain into the cup
+Add milk and sugar
+Serve (ship it)
+Correct Sequence:
+Light the stove → Boil water in the pan → Add tea leaves & spices → Simmer till it rises → Strain into the cup → Add milk and sugar → Serve
+Main Concept
+This activity teaches the basic idea of programming and algorithms.
+A computer follows instructions exactly as written.
+The instructions must be given in the correct order.
+If the sequence is wrong, the final output will be wrong.
+Debugging means finding and correcting mistakes in a program.
+Key Point: Writing a sequence of steps for making chai is similar to writing a program—the steps are instructions that must be followed in order.
+2. Python Classes
+Python classes from Job 07 onward focus on the same idea:
+Instructions → Execution → Output → Debugging
+The chai activity is like a simple real-life example of how a computer program works.
+3. Raw Material — Before / Right After Class
+Tasks:
+Join the Class Scratch Studio
+Enrol in NPTEL – The Joy of Computing using Python
+No Laptop?
+No problem.
+Scratch can run in any browser.
+Lab machines are available Friday, 9–11 AM in A-11.
+Pairing in class means one device per pair is enough.
+4. Dispatch List — Before Job 02
+Things to 
