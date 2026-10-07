@@ -1,0 +1,20 @@
+Declarative vs. Imperative Knowledge
+​Concept Comparison
+​DECLARATIVE · "THE DRAWING"  
+​Definition: A statement of fact — what is true. It describes the finished state but tells you nothing about how to reach it.  
+​Example: "The shaft diameter is 25.00 \pm 0.05\text{ mm}." True, but useless for machining it.  
+​IMPERATIVE · "THE ROUTE SHEET"  
+​Definition: A recipe — how to do it. A sequence of steps that, followed exactly, produces the fact.  
+​Example: "Face the end \rightarrow rough turn to 25.4 \rightarrow finish turn to 25.05 \rightarrow grind to size." Follow it, get the shaft.  
+​The Punchline: A computer program is imperative knowledge written so precisely that a machine with no common sense can follow it. Every drawing needs a route sheet; every "what" needs a "how". Programming is route-sheet writing for facts.
+  
+​Specifications - What You Should Take Away
+​Define declarative vs. imperative knowledge and give one shop example of each, unprompted.  
+​Classify any statement put in front of you as fact or recipe.  
+​Complete EduBlocks Lessons 3–4 and point at one place where you now read the Python first and the block second.  
+​Say in one line what "computation" means to you after today.  
+​Try It - Spec or Process Plan?
+​Ten statements roll off the printer with no letterhead. File each one into its category:  
+​SPEC: Declarative — a fact, a "what".  
+​PROCESS PLAN: Imperative — a recipe, a "how".  
+​(Note: Today's quiz consists of five of these statements on paper.)  
