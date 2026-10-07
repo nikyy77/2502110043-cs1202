@@ -1,0 +1,28 @@
+What You Should Take Away
+​Script Translation: Read a short EduBlocks script and say what the generated Python will look like, block by block.  
+​The "Big Four" Syntax Mapping:
+​Say \rightarrow print()  
+​Repeat \rightarrow for ... range()  
+​Decide \rightarrow if/else  
+​Remember \rightarrow variable = value  
+​Syntax Structure: Explain why the colon (:) and the indentation appear in Python's for/if lines — it is the text's way of drawing the block's outline.  
+​Blocks vs. Text: State one thing blocks made easy that text makes precise — and why professionals graduate to text.  
+​Try It – Blueprint \rightarrow Part
+​(Match Block to Python)  
+​In the shop, a drawing and its finished part must match exactly. Tap a block (the blueprint), then tap the Python line it machines into (the part).  
+​Block-to-Python MappingsBlueprints · BlocksFinished Parts · Python
+ask [Size?] and waitsize = input("Size?")
+change [count] by [1]count = count + 1
+if <dia > 25> thenif dia > 25:
+repeat (5) timesfor i in range(5):
+wait (1) secondtime.sleep(1)
+set [count] to [0]count = 0
+say [Hello, PE!]print("Hello, PE!")
+foreverwhile True:Note: time.sleep(1) needs import time first — EduBlocks adds that line for you; from Module I, you'll add it yourself.
+  
+​Quiz Tip: Today's quiz is this game on paper. Play it three times now and the quiz is free marks.
+  
+​Raw Material – Links for Today
+​(Open before 03:30)  
+​EduBlocks curriculum – Lessons 1–2  
+​NPTEL – Week 2 continues  
