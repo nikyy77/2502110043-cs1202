@@ -1,0 +1,19 @@
+Read it like an inspection report: Python names the operation (+), the two materials ('int' and 'str'), and refuses to weld steel to a nameplate.
+  
+​The fix is a material conversion: int("30") re-certifies the nameplate as bar stock. Since input() always hands you a nameplate (str), the pattern n = int(input("How many? ")) becomes muscle memory from today.
+  
+​Pallet Mathematics – // and %
+​The production engineer's favourite operators  
+​// · FLOOR DIVISION · "FULL BOXES"  
+​Concept: How many complete boxes of 12 from 137 parts? Divide and throw away the fraction.  
+​Example: 137 // 12 \rightarrow 11 (11 full boxes, guaranteed int).  
+​% · MODULO · "LOOSE PARTS"  
+​Concept: How many parts are left over, sitting loose on the bench? The remainder.  
+​Example: 137 % 12 \rightarrow 5 (5 loose parts – order a 12th box or not?).  Try It - Fill the Operator
+​Eight machine setups arrive with the operator missing from the program. Read the job description, then tap the operator that makes the expression produce exactly the target.  
+​Setups 1–2 are the pallet problem itself.  
+​Setup 4 checks whether you believed us about / and floats.  
+​OP 40 continues from here: After clearing all 8, invent two shop problems of your own that need // and % — that's the marked half of the activity.
+  
+​Dispatch List - Whole Wednesday (Before Job 09: Thu 9–10 AM, D-225)
+​Notebook entry: min. 1 sheet / 2 pages covering Jobs 07 + 08: the materials catalogue, the traceback copied by hand with its meaning, your two invented // / % problems, and both 
