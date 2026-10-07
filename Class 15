@@ -1,0 +1,17 @@
+The Container Yard – Lists, Tuples & Sets
+​The Container Yard (Three Shapes, Three Jobs)
+​LIST [ ] · THE PARTS BIN  
+​Properties: Ordered, changeable, duplicates welcome.  
+​Use Case: The default choice when things arrive, leave, and have positions.  
+​Example: dias = [25.02, 24.98, 25.02] \rightarrow dias.append(25.10) \checkmark  
+​TUPLE ( ) · THE SEALED RECORD  
+​Properties: Ordered, frozen at creation.  
+​Use Case: For things that must not drift: spec limits, calibration constants, a fixed (x, y) location.  
+​Example: SPEC = (24.95, 25.05) \rightarrow SPEC[0] = 24.00 \boldsymbol{\times} (TypeError)  
+​SET { } · THE NO-DUPLICATES BIN  
+​Properties: Unordered, unique.  
+​Use Case: Ask it "what distinct codes occurred?" or "is X in here?" and it answers instantly, however big it gets.  
+​Example: codes = {"D01", "D07", "D01"} \rightarrow {"D01", "D07"} (duplicates gone)  
+​Interactive Terminal & The Immutability Guarantee>>> SPEC = (24.95, 25.05)          # sealed: lower, upper
+>>> lower, upper = SPEC             # unpacking - two names in 
+3
