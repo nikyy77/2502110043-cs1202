@@ -1,0 +1,93 @@
+from pathlib import Path
+from datetime import datetime
+
+# --- Step 4: One Class You're Proud Of (Demo Section) ---
+class StorageBag:
+    def __init__(self, bag_id, method, initial_weight):
+        # Data cleaning from Job Card 25 toolset
+        self.bag_id = bag_id.strip().upper() 
+        self.method = method.strip()
+        self.initial_weight = float(initial_weight) # Risky, but managed by parent load loop
+
+    def calculate_current_loss(self, current_weight):
+        """Step 4: I built this method using try/except not
+from pathlib import Path
+
+class PumpImpellerFailure(Exception):
+    """Raised when pump efficiency/output drops below critical threshold."""
+    pass
+
+class IrrigationLogbook:
+    def __init__(self, log_filepath):
+        self.log_filepath = Path(log_filepath)
+        self.records = []
+
+    def load_log(self):
+        """Reads irrigation records from disk safely using pathlib and with."""
+        if not self.log_filepath.exists():
+            print(f"Warning: Log file '{self.log_filepath}' not found. Starting fresh.")
+            return
+
+        with open(self.log_filepath, "r") as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith("PLOT"): # Skip headers/empty lines
+                    continue
+                try:
+                    parts = line.split(",")
+                    plot_id = parts[0].strip()
+                    run_hours = float(parts[1].strip())
+                    water_delivered = float(parts[2].strip()) # in liters/hectare
+                    
+                    self.records.append({
+                        "plot_id": plot_id,
+                        "hours": run_hours,
+                        "water": water_delivered
+                    })
+                except (IndexError, ValueError) as e:
+                    print(f"Malformed log entry skipped: {line} ({e})")
+
+    def analyze_plots(self, target_water=500.0, min_flow_rate=45.0):
+        """Analyzes plots for under-watering and checks pump impeller efficiency."""
+        print(f"\n{'='*55}")
+        print(f"{'IRRIGATION & PUMP STATUS REPORT':<55}")
+        print(f"{'='*55}")
+        print(f"{'PLOT ID':<12}{'HOURS':>10}{'WATER (L)':>12}{'STATUS':>18}")
+        print(f"{'-'*55}")
+
+        for rec in self.records:
+            p_id = rec["plot_id"]
+            hrs = rec["hours"]
+            water = rec["water"]
+            
+            # Calculate flow rate (water per hour)
+            flow_rate = water / hrs if hrs > 0 else 0
+            
+            # Check for falling pump output (impeller warning)
+            try:
+                if flow_rate < min_flow_rate and hrs > 0:
+                    raise PumpImpellerFailure(f"Low flow ({flow_rate:.1f} L/hr)")
+            except PumpImpellerFailure as e:
+                status = f"WARNING: {e}"
+            else:
+                status = "UNDER-WATERED" if water < target_water else "OPTIMAL"
+
+            print(f"{p_id:<12}{hrs:>10.1f}{water:>12.1f}{status:>18}")
+
+        print(f"{'='*55}\n")
+
+# --- Example Usage ---
+# Create a sample log file on disk for demonstration
+log_file = Path("irrigation_shift_log.txt")
+log_file.write_text(
+    "PLOT ID, RUN HOURS, WATER DELIVERED\n"
+    "PLOT-A1, 10.0, 520.0\n"
+    "PLOT-A2, 12.5, 410.0\n" # Under-watered
+    "PLOT-B1, 15.0, 480.0\n" # Triggers PumpImpellerFailure (480/15 = 32 L/hr < 45)
+    "PLOT-B2, 8.0,  450.0\n"
+)
+
+# Run the system
+system = IrrigationLogbook(log_file)
+system.load_log()
+system.analyze_plots(target_water=500.0, min_flow_rate=45.0)
