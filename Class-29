@@ -1,0 +1,39 @@
+from pathlib import Path
+
+# Define paths and join folders/files using the / operator
+data = Path("data")                  # A folder path
+log = data / "2026-09" / "shift_01.csv"  # Automatically handles correct OS slashes
+
+# Useful Path inspection properties:
+print("Exists?:", log.exists())      # True/False
+print("Name:", log.name)             # 'shift_01.csv'
+print("Stem:", log.stem)             # 'shift_01' (filename without extension)
+print("Suffix:", log.suffix)         # '.csv'
+print("Parent:", log.parent)         # Path('data/2026-09')
+
+# Creating directories automatically (e.g., building your own records room)
+out = Path("reports")
+out.mkdir(exist_ok=True)             # Builds the folder if it doesn't exist yet
+
+# Using pathlib directly inside open()
+with open(log, "r") as f:
+    for line in f:
+        print(line.strip())
+with open("production_log.txt", "r") as f:
+    # 1. for line in f:  -> BEST: one line at a time, any file size (memory efficient)
+    # 2. f.readlines()   -> A list of every line - fine only for small files
+    # 3. f.read()        -> One giant string - only for small files
+    pass
+from pathlib import Path
+from datetime import datetime
+
+# --- Step 4: One Class You're Proud Of (Demo Section) ---
+class StorageBag:
+    def __init__(self, bag_id, method, initial_weight):
+        # Data cleaning from Job Card 25 toolset
+        self.bag_id = bag_id.strip().upper() 
+        self.method = method.strip()
+        self.initial_weight = float(initial_weight) # Risky, but managed by parent load loop
+
+    def calculate_current_loss(self, current_weight):
+        """Step 4: I built this method using try/except not
