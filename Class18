@@ -1,0 +1,50 @@
+# 1. .strip() - Trims whitespace both ends (used for every field of every log line)
+raw_line = "   L-01, 25.02, 128   \n"
+cleaned_line = raw_line.strip()
+print(repr(cleaned_line))  # Output: 'L-01, 25.02, 128'
+
+# 2. .upper() / .lower() - Case conversion (making "night", "NIGHT", and "Night" uniform)
+shift_name = "night"
+print(shift_name.upper())  # Output: NIGHT
+
+# 3. .replace(old, new) - Swaps every occurrence (cleaning stray commas or characters)
+measurement = "25,02"  # European comma notation
+standard_meas = measurement.replace(",", ".")
+print(standard_meas)  # Output: 25.02
+
+# 4. .startswith(x) - True/False test for filtering specific logs
+log_entry = "PE-PART-004"
+print(log_entry.startswith("PE-"))  # Output: True
+
+# 5. .split(sep) - Splits text into a list of fields (Work Order 05's parser)
+record = "L-01,25.02,128"
+fields = record.split(",")
+print(fields)  # Output: ['L-01', '25.02', '128']
+
+# 6. sep.join(list) - Combines a list of fields into text (writing a CSV row - the reverse of split)
+fields_list = ["L-01", "25.02", "128"]
+csv_row = ",".join(fields_list)
+print(csv_row)  # Output: L-01,25.02,128
+class InventoryStockError(ValueError):
+    """Raised when an order quantity exceeds available stock or is negative."""
+    def __init__(self, item_code, requested, available):
+        self.item_code = item_code
+        self.requested = requested
+        self.available = available
+        super().__init__(
+            f"Stock fault for '{item_code}': requested {requested}, but only {available} available."
+        )
+
+
+def dispatch_fixture(item_code, qty, stock):
+    if qty <= 0:
+        raise ValueError(f"Quantity must be positive, got {qty}")
+    if qty > stock:
+        raise InventoryStockError(item_code, qty, stock)
+    return stock - qty
+
+
+try:
+    dispatch_fixture("BRASS-LAMP-04", 15, 8)
+except InventoryStockError as e:
+    print("Dispatch halted:", e)
