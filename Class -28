@@ -1,0 +1,19 @@
+data/
+├── shift_log.txt        (18 rows)
+├── notes.txt            (4 rows)
+├── readme.md            (6 rows)
+├── 2026-08/
+│   ├── shift_01.csv     (120 rows)
+│   ├── shift_02.csv     (118 rows)
+│   └── rejects.csv      (9 rows)
+├── 2026-09/
+│   ├── shift_01.csv     (131 rows)
+│   ├── shift_02.csv     (127 rows)
+│   └── report.txt       (12 rows)
+└── archive/
+    └── 2025_old.csv     (400 rows)
+Why Use the / Operator Instead of String Concatenation? ​Cross-Platform Compatibility: Windows uses \ for directories while macOS/Linux use /. Hand-typed slashes lock code to a single operating system. ​Universal Execution: Path("data") / "log.txt" evaluates correctly on your local laptop, laboratory machines, and automated grading environments. ​2. File Structure & Glob Patterns 
+
+​Understanding directory trees and file filtering patterns is essential for processing batch data logs.
+
+​Example Directory Tree (data/) 
